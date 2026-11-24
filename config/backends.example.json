@@ -1,0 +1,12 @@
+{
+  "prometheus_url": "http://127.0.0.1:19090",
+  "jaeger_url": "http://127.0.0.1:16686",
+  "opensearch_url": "http://127.0.0.1:19200",
+  "log_index": "otel-logs-*",
+  "log_timestamp_field": "@timestamp",
+  "log_service_field": "resource.service.name",
+  "log_body_field": "body",
+  "metric_query": null,
+  "max_results": 100,
+  "request_timeout_seconds": 5
+}

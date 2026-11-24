@@ -1,0 +1,50 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.env
+artifacts/
+data/raw/
+data/private/
+.cache/
+config/local.json
+data/recordings/
+# 本地环境配置；保留可分享的配置模板
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
+# Python 打包生成的文件
+/build/
+/dist/
+
+# 代码检查、测试工具的缓存和临时环境
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.hypothesis/
+.ipynb_checkpoints/
+
+# 测试覆盖率和自动生成的测试报告
+.coverage
+.coverage.*
+/htmlcov/
+/coverage.xml
+/coverage.json
+/junit.xml
+/pytest-report.html
+/test-results/
+
+# 根目录中的个人修复笔记和备份压缩包
+/当前修复log.txt
+/神迹2.0.zip
+
+# 以后手动创建的临时笔记、草稿可以放这里
+/_local/
+
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db

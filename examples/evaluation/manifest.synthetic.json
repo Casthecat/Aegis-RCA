@@ -1,0 +1,19 @@
+{
+  "episodes": [
+    {
+      "id": "synthetic-connectivity-example",
+      "group": "synthetic-example",
+      "split": "dev",
+      "report": "report.synthetic.json",
+      "evidence": "evidence.synthetic.json",
+      "label": "label.synthetic.json",
+      "window": {
+        "start": "2026-09-08T14:30:00Z",
+        "end": "2026-09-08T14:40:00Z"
+      },
+      "services": ["checkout"]
+    }
+  ],
+  "injected_flags": [],
+  "scenario_answers": []
+}

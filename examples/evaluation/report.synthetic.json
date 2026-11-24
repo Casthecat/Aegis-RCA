@@ -1,0 +1,76 @@
+{
+  "status": "SUPPORTED",
+  "diagnosis_level": "failure_mode",
+  "summary": "Checkout experienced connection establishment failures toward Payment.",
+  "underlying_cause": null,
+  "claims": [
+    {
+      "text": "Checkout experienced connection establishment failures toward Payment.",
+      "evidence_ids": [
+        "E-trace-f3dd8f37ea9f8076a9bb",
+        "E-log-fe193ebdede53df63474"
+      ]
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H-connectivity",
+      "claim": "Checkout experienced connection establishment failures toward Payment.",
+      "affected_service": "checkout",
+      "failure_mode": "payment_connection_failure",
+      "supporting_evidence_ids": [
+        "E-trace-f3dd8f37ea9f8076a9bb",
+        "E-log-fe193ebdede53df63474"
+      ],
+      "contradicting_evidence_ids": [],
+      "missing_checks": [],
+      "status": "supported"
+    },
+    {
+      "id": "H-application",
+      "claim": "Payment application failures may contribute to checkout errors.",
+      "affected_service": "checkout",
+      "failure_mode": "payment_application_error",
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "missing_checks": [
+        "Inspect Payment server-side failures for the affected requests."
+      ],
+      "status": "uncertain"
+    },
+    {
+      "id": "H-saturation",
+      "claim": "Checkout resource saturation may contribute to the incident.",
+      "affected_service": "checkout",
+      "failure_mode": "checkout_resource_saturation",
+      "supporting_evidence_ids": [],
+      "contradicting_evidence_ids": [],
+      "missing_checks": [
+        "Inspect CPU, queue, thread-pool and connection-pool saturation."
+      ],
+      "status": "uncertain"
+    }
+  ],
+  "limitations": [
+    "Synthetic telemetry; this is not measured RCA performance.",
+    "Deterministic investigation policy; no LLM was used.",
+    "Configuration, DNS, process health and deployment cause remain unverified.",
+    "Log and trace evidence may describe the same RPC; they are not independent trials.",
+    "No temporal fault-propagation or exclusive incident cause has been established.",
+    "log telemetry coverage is unknown or incomplete.",
+    "Derived observations use bounded deterministic parsing.",
+    "metric query returned empty; absence is unproven.",
+    "metric telemetry coverage is unknown or incomplete.",
+    "Raw metric samples retained; no metric-specific diagnostic threshold was configured.",
+    "trace telemetry coverage is unknown or incomplete."
+  ],
+  "next_checks": [
+    "Inspect the endpoint configured in Checkout and verify DNS/connectivity.",
+    "Inspect Payment process health and server-side telemetry."
+  ],
+  "rounds": 2,
+  "tool_calls": 3,
+  "termination_reason": "observed_failure_mode_supported",
+  "mode": "synthetic_fixture",
+  "reasoning_mode": "deterministic"
+}

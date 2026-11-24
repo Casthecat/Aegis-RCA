@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "incident": {
+    "query": "Why did checkout failures increase?",
+    "window": {
+      "start": "2026-09-08T14:30:00Z",
+      "end": "2026-09-08T14:40:00Z"
+    },
+    "seed_services": [
+      "checkout"
+    ]
+  },
+  "provenance": "synthetic_wire_fixture",
+  "metrics": {
+    "warnings": [],
+    "truncated": false,
+    "coverage_complete": null,
+    "series": [
+      {
+        "name": "synthetic_error_ratio",
+        "labels": {
+          "service_name": "checkout"
+        },
+        "points": [
+          {
+            "timestamp": "2026-09-08T14:30:00Z",
+            "value": 0.01
+          },
+          {
+            "timestamp": "2026-09-08T14:31:00Z",
+            "value": 0.01
+          },
+          {
+            "timestamp": "2026-09-08T14:32:00Z",
+            "value": 0.01
+          },
+          {
+            "timestamp": "2026-09-08T14:33:00Z",
+            "value": 0.01
+          },
+          {
+            "timestamp": "2026-09-08T14:34:00Z",
+            "value": 0.01
+          },
+          {
+            "timestamp": "2026-09-08T14:35:00Z",
+            "value": 0.45
+          },
+          {
+            "timestamp": "2026-09-08T14:36:00Z",
+            "value": 0.45
+          },
+          {
+            "timestamp": "2026-09-08T14:37:00Z",
+            "value": 0.45
+          },
+          {
+            "timestamp": "2026-09-08T14:38:00Z",
+            "value": 0.45
+          },
+          {
+            "timestamp": "2026-09-08T14:39:00Z",
+            "value": 0.45
+          }
+        ],
+        "source": "synthetic:metric/1"
+      }
+    ]
+  },
+  "traces": {
+    "warnings": [],
+    "truncated": false,
+    "coverage_complete": null,
+    "spans": [
+      {
+        "trace_id": "11111111111111111111111111111111",
+        "span_id": "2222222222222222",
+        "parent_span_id": null,
+        "service": "checkout",
+        "name": "oteldemo.PaymentService/Charge",
+        "kind": "CLIENT",
+        "start": "2026-09-08T14:36:00Z",
+        "duration_ms": 10.0,
+        "status": "ERROR",
+        "attributes": {
+          "rpc.service": "oteldemo.PaymentService",
+          "rpc.grpc.status_code": 14,
+          "peer.service": "payment"
+        },
+        "source": "synthetic:trace/11111111111111111111111111111111#2222222222222222"
+      }
+    ]
+  },
+  "logs": {
+    "warnings": [],
+    "truncated": false,
+    "coverage_complete": null,
+    "logs": [
+      {
+        "id": "synthetic-log-1",
+        "timestamp": "2026-09-08T14:36:00Z",
+        "service": "checkout",
+        "severity": "ERROR",
+        "body": "Synthetic: dial tcp payment:50051: connect: connection refused",
+        "trace_id": "11111111111111111111111111111111",
+        "span_id": "2222222222222222",
+        "attributes": {},
+        "source": "synthetic:log/1"
+      }
+    ]
+  },
+  "collection_errors": {},
+  "rpc_service_map": {
+    "oteldemo.PaymentService": "payment"
+  }
+}

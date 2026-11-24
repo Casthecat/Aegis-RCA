@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aegis-rca"
+version = "0.2.0"
+description = "Bounded incident investigation with telemetry adapters and replay"
+requires-python = ">=3.11"
+dependencies = ["langgraph>=1.2.11,<1.3", "pydantic>=2.13.5,<3", "httpx>=0.28,<1",
+                "fastapi>=0.141,<1", "uvicorn>=0.52,<1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=9,<10", "pytest-asyncio>=1.4,<2"]
+
+[project.scripts]
+aegis-rca = "aegis_rca.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+asyncio_mode = "auto"
+testpaths = ["tests"]

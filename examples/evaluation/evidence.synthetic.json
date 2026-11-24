@@ -1,0 +1,36 @@
+[
+  {
+    "id": "E-log-fe193ebdede53df63474",
+    "signal": "log",
+    "service": "checkout",
+    "timestamp": "2026-09-08T14:36:00Z",
+    "observation": {
+      "code": "connection_refused",
+      "peer_service": "payment"
+    },
+    "excerpt": "Synthetic: dial tcp payment:50051: connect: connection refused",
+    "source": {
+      "backend": "opensearch",
+      "locator": "synthetic:log/1",
+      "synthetic": true
+    },
+    "correlation_group": "11111111111111111111111111111111"
+  },
+  {
+    "id": "E-trace-f3dd8f37ea9f8076a9bb",
+    "signal": "trace",
+    "service": "checkout",
+    "timestamp": "2026-09-08T14:36:00Z",
+    "observation": {
+      "code": "rpc_unavailable",
+      "peer_service": "payment"
+    },
+    "excerpt": "checkout client RPC oteldemo.PaymentService/Charge: gRPC UNAVAILABLE; peer=payment",
+    "source": {
+      "backend": "jaeger",
+      "locator": "synthetic:trace/11111111111111111111111111111111#2222222222222222",
+      "synthetic": true
+    },
+    "correlation_group": "11111111111111111111111111111111"
+  }
+]
